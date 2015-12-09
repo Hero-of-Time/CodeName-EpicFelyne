@@ -1,7 +1,7 @@
 A3D.config = {
   game:{
     forceResolution: true,
-    targetRes : [850,850],
+    targetRes : [640,480],
     startScene : 'first_level'
   },
   scenes : {
@@ -16,16 +16,16 @@ A3D.config = {
       jumpButton : 32,
       leftButton : 65,
       rightButton : 68,
-      gravity : -0.9,
+      gravity : -0.6,
 
       actionButton: 'leftmouse',
       playerSettings : {
-        meshName: 'CircleMan',
+        meshName: 'Sphere',
         rootUrl: '/models/',
-        file:'Circle_man.babylon',
+        file:'Felyne-completed.babylon',
         spawnPoint : 'InitialSpawn',
-        jumpForce : 4,
-        jumpAccel : 2,
+        jumpForce : 1.5,
+        jumpAccel : 1,
         animationsSetup : [
           {
             name : 'walk',
@@ -64,22 +64,37 @@ A3D.config = {
           }
         ],
         rotationValues : {
-          left : 3,
-          right : 0
+          left : 1.5,
+          right : -1.5
         },
 
         scale : {
-          x: 3,
-          y: 3,
-          z : 3
+          x: 1,
+          y: 1,
+          z : 1
         },
         boundsOffset : {
-          z : -2,
-          x : -2,
-          y: 8.5
+          z : 0,
+          x : 0,
+          y: 7.3
         }
 
       },
+      endTrigger : 'Flag',
+      screenImages : [
+        {
+          src:'/images/start.png',
+          id : 'mainScreen'
+        },
+        {
+          src:'/images/lose.png',
+          id : 'loseScreen'
+        },
+        {
+          src:'/images/win.png',
+          id : 'winScreen'
+        }
+      ],
       livesImage : {
         src : '/images/heart.png',
         dX:0,
